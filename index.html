@@ -1,51 +1,906 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101827"><title>Guía de preparación | Sistema Maestro</title>
-<style>
-:root{--bg:#0b1220;--p:#121e30;--p2:#18263a;--line:#2b3b52;--ink:#eef4fb;--muted:#a8b7ca;--blue:#78b7ff;--cyan:#68e0d0;--gold:#ffd37c;--red:#ff9292;--green:#8de0ad}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% -10%,#1d3a5b,transparent 36%),var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,sans-serif}.wrap{max-width:1150px;margin:auto;padding:22px}.hero{padding:28px 0}.eyebrow{color:var(--cyan);font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:.75rem}h1{font-size:clamp(2rem,5vw,3.6rem);line-height:1.07;max-width:900px;margin:12px 0}h2{font-size:clamp(1.5rem,3vw,2.2rem);margin:0 0 8px}h3{margin:0 0 8px;font-size:1.08rem}p{margin:8px 0 14px}.hero p,.sub,.small{color:var(--muted)}.hero p{max-width:800px;font-size:1.08rem}.btn{border:1px solid var(--line);background:var(--p2);color:var(--ink);padding:10px 14px;border-radius:11px;font:inherit;font-weight:750;cursor:pointer;text-decoration:none;display:inline-block}.btn:hover{border-color:var(--blue);transform:translateY(-1px)}.btn.primary{background:var(--blue);color:#071322;border-color:var(--blue)}.btn.ghost{background:transparent}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.nav{display:flex;gap:6px;flex-wrap:wrap;position:sticky;top:0;z-index:5;padding:9px 0;background:#0b1220ed;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}.nav button{background:transparent;border:1px solid transparent;color:var(--muted);padding:9px 11px;border-radius:9px;cursor:pointer;font:inherit}.nav button.active,.nav button:hover{background:var(--p2);border-color:var(--line);color:var(--ink)}main{padding:22px 0 42px}.section{display:none;animation:enter .3s ease}.section.active{display:block}@keyframes enter{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:18px 0}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.card{background:linear-gradient(160deg,#17263a,#101a2a);border:1px solid var(--line);border-radius:17px;padding:18px;box-shadow:0 14px 40px #0003}.card p,.card li{color:var(--muted)}.num{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:10px;background:#254363;color:var(--blue);font-weight:900;margin-bottom:10px}.tag{display:inline-block;border:1px solid var(--line);border-radius:99px;padding:4px 9px;color:var(--muted);font-size:.78rem;font-weight:700}.notice{border:1px solid #7a6236;background:#342a19;border-radius:13px;padding:14px 16px;color:#ffe7b6;margin:17px 0}.notice strong{color:#fff2d6}.notice.danger{border-color:#74414b;background:#321d27;color:#ffc5cb}.notice.good{border-color:#2f6b57;background:#142d2a;color:#b7f6d3}.progressbox{background:var(--p);border:1px solid var(--line);padding:15px;border-radius:15px;margin:15px 0}.progressline{height:9px;background:#26354a;border-radius:99px;overflow:hidden;margin:10px 0}.progressline span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--cyan));transition:width .25s}.checklist{display:grid;gap:8px}.checkrow{display:flex;gap:11px;align-items:flex-start;padding:12px;border:1px solid var(--line);background:#111c2b;border-radius:11px}.checkrow input{width:18px;height:18px;margin-top:4px;accent-color:var(--cyan);flex-shrink:0}.checkrow b{display:block}.checkrow small{display:block;color:var(--muted);margin-top:3px}.field{display:grid;gap:6px;margin:12px 0}.field label{font-weight:750}.field input,.field select{background:#0c1625;border:1px solid var(--line);border-radius:10px;padding:11px;color:var(--ink);width:100%;font:inherit}.twofields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.filelist{display:grid;gap:10px;margin-top:14px}.fileitem{padding:13px;border:1px solid var(--line);border-radius:12px;background:#0e1928}.filetop{display:flex;justify-content:space-between;gap:12px;align-items:start}.status{font-size:.78rem;font-weight:900;border-radius:99px;padding:4px 8px;white-space:nowrap;display:inline-block}.status.ok{background:#183c30;color:#a5f0c2}.status.bad{background:#49242b;color:#ffc0c8}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:13px;margin:14px 0}table{border-collapse:collapse;width:100%;min-width:600px;background:#101b2a}th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}th{background:#1a2a40;color:#dcecff}td{color:#d4dfeb}tr:last-child td{border-bottom:0}.points{font-weight:900;color:var(--cyan)}.stepbar{display:flex;gap:7px;flex-wrap:wrap;margin:15px 0}.stepbar button{border:1px solid var(--line);background:var(--p);color:var(--muted);border-radius:9px;padding:9px 11px;cursor:pointer}.stepbar button.active{color:#071322;background:var(--cyan);border-color:var(--cyan)}.stepcontent{padding:18px;border:1px solid var(--line);border-radius:15px;background:var(--p);min-height:150px}.hidden{display:none!important}.listclean{padding-left:20px}.listclean li{margin:7px 0}.quizq{padding:16px;border:1px solid var(--line);border-radius:14px;margin:12px 0;background:#111d2c}.quizq legend{font-weight:800;padding:0 5px}.option{display:flex;gap:9px;padding:8px 10px;border-radius:9px;color:var(--muted);cursor:pointer}.option:hover{background:#1a2a40}.option input{accent-color:var(--cyan);margin-top:5px}.feedback{display:none;padding:10px 12px;border-radius:10px;margin-top:10px}.feedback.show{display:block}.feedback.correct{background:#17372e;color:#b5f2cd}.feedback.incorrect{background:#41242a;color:#ffc2c7}.score{font-size:1.5rem;font-weight:900}.footer{border-top:1px solid var(--line);padding:22px 0 35px;color:var(--muted);font-size:.86rem}@media(max-width:800px){.grid,.grid.two,.twofields{grid-template-columns:1fr}.wrap{padding:15px}.nav{position:relative}.filetop{display:block}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-</style></head><body><div class="wrap">
-<header class="hero"><div class="eyebrow">Guía práctica · Resolución 003593 de 2024 + anexo técnico</div><h1>Prepara tu perfil antes de postularte a Sistema Maestro</h1><p>Una guía interactiva para organizar tus soportes, comprobar requisitos documentales, entender los criterios de ponderación y practicar antes de enviar una postulación real.</p><div class="actions"><button class="btn primary" onclick="go('ruta')">Empezar mi preparación →</button><button class="btn" onclick="go('archivos')">Revisar archivos PDF</button></div></header>
-<nav class="nav" aria-label="Secciones de la guía"><button class="active" data-tab="ruta" onclick="go('ruta')">1. Mi ruta</button><button data-tab="documentos" onclick="go('documentos')">2. Lista de documentos</button><button data-tab="archivos" onclick="go('archivos')">3. Revisar PDF</button><button data-tab="certificados" onclick="go('certificados')">4. Revisar certificados</button><button data-tab="puntaje" onclick="go('puntaje')">5. Puntajes</button><button data-tab="quiz" onclick="go('quiz')">6. Simulacro</button></nav><main>
-<section id="ruta" class="section active"><h2>Tu preparación en seis momentos</h2><p class="sub">Sigue la ruta en orden. No necesitas tener todos los soportes para comenzar; la lista te ayuda a identificar qué tienes y qué debes solicitar.</p><div class="grid">
-<div class="card"><div class="num">01</div><h3>Confirma que puedes aplicar</h3><p>Comprueba que tu título está habilitado para el área y el nivel de desempeño de la vacante. Consulta el Manual de Funciones y Requisitos Docentes aplicable.</p><span class="tag">Antes de cargar documentos</span></div>
-<div class="card"><div class="num">02</div><h3>Define tu tabla</h3><p>Identifica si la vacante usa tabla general o específica. El anexo describe la tabla específica para jóvenes de 18 a 28 años sin experiencia y las reglas especiales que puedan aplicar.</p><span class="tag">Confirma en la vacante</span></div>
-<div class="card"><div class="num">03</div><h3>Organiza los soportes</h3><p>Reúne identificación, título habilitante y documentos adicionales que quieras acreditar para los criterios de tu tabla.</p><span class="tag">Información verificable</span></div>
-<div class="card"><div class="num">04</div><h3>Revisa cada archivo</h3><p>Convierte a PDF, verifica que se lea completo y que pese como máximo 1 MB por documento. Comprueba la carga en la plataforma.</p><span class="tag">PDF · hasta 1 MB</span></div>
-<div class="card"><div class="num">05</div><h3>Actualiza tu perfil</h3><p>Completa los módulos de datos básicos, Educación Formal y Perfil Educativo. Registra los datos de cada certificado de forma coherente con el soporte.</p><span class="tag">Antes de postularte</span></div>
-<div class="card"><div class="num">06</div><h3>Postúlate a tiempo</h3><p>Revisa la vacante, sus requisitos y su plazo. El anexo establece una ventana de 24 horas desde la publicación; tras postularte no puedes modificar los soportes de esa postulación.</p><span class="tag">Ventana de 24 horas</span></div></div>
-<div class="notice"><strong>Regla que puede marcar la diferencia:</strong> la secretaría valida los requisitos y soportes de los candidatos preseleccionados. Un puntaje calculado en el sistema no sustituye el cumplimiento del perfil ni la validez de los documentos.</div>
-<div class="progressbox"><div class="filetop"><b>Mi avance de preparación</b><span class="score" id="routePercent">0%</span></div><p class="small">Marca las tareas completadas en la lista de documentos.</p><div class="progressline"><span id="routeBar"></span></div><button class="btn" onclick="go('documentos')">Abrir lista de documentos →</button></div>
-<div class="card"><h3>Acceso a las fuentes oficiales</h3><p>Consulta vacantes y manuales publicados por el Ministerio de Educación Nacional.</p><div class="actions"><a class="btn primary" href="https://sistemamaestro.mineducacion.gov.co" target="_blank" rel="noopener">Abrir Sistema Maestro ↗</a><a class="btn" href="https://www.mineducacion.gov.co/portal/micrositios-institucionales/Sistema-Maestro/" target="_blank" rel="noopener">Micrositio y manuales ↗</a></div><p class="small">Confirma en el portal la versión vigente de las reglas y las vacantes publicadas.</p></div></section>
-<section id="documentos" class="section"><h2>Lista personal de preparación</h2><p class="sub">Marca cada elemento solo cuando lo hayas verificado. El paquete exacto depende de tu perfil, la tabla de la vacante y los criterios por los que quieras obtener puntaje.</p><div class="twofields"><div class="field"><label for="ageGroup">¿Qué grupo describe tu postulación?</label><select id="ageGroup"><option value="general">Tabla general (por ejemplo, 29 años o más)</option><option value="specific">Tabla específica (18 a 28 años, según condiciones de la vacante)</option><option value="unsure">Todavía no lo he confirmado</option></select></div><div class="field"><label for="targetArea">¿Qué vas a preparar?</label><select id="targetArea"><option>Vacante docente</option><option>Vacante de preescolar o primaria</option><option>Vacante en San Andrés, Providencia o Santa Catalina</option></select></div></div><div id="specialSan" class="notice danger hidden"><strong>Vacantes en San Andrés:</strong> el anexo menciona requisitos especiales de residencia (certificado OCCRE) y dominio del inglés normalmente hablado. Verifica las reglas específicas antes de postularte.</div><div class="notice">Los archivos opcionales solo aportan puntaje si cumples el criterio y el documento satisface las condiciones. No cargues documentos irrelevantes ni información falsa.</div><div class="progressbox"><div class="filetop"><b>Avance de la lista</b><span id="checkCount" class="tag">0 de 0</span></div><div class="progressline"><span id="checkBar"></span></div></div><div class="checklist" id="checklist"></div><div class="actions"><button class="btn" onclick="resetChecks()">Reiniciar lista</button><button class="btn primary" onclick="go('archivos')">Revisar mis PDF →</button></div></section>
-<section id="archivos" class="section"><h2>Revisión técnica de archivos PDF</h2><p class="sub">Selecciona archivos para comprobar en tu navegador el tipo declarado, la extensión y el tamaño. No se envían ni almacenan en un servidor; la herramienta no inspecciona el contenido jurídico ni garantiza que el sistema oficial acepte el archivo.</p><div class="grid two"><div class="card"><h3>Selecciona tus archivos</h3><p>La regla del anexo es <b>un PDF legible de máximo 1 MB por documento</b>. Si un certificado requiere varias páginas, asegúrate de que estén todas incluidas.</p><div class="field"><label for="pdfFiles">Archivos para revisar</label><input id="pdfFiles" type="file" accept="application/pdf,.pdf" multiple></div><p class="small">La revisión es local. Abre también cada archivo para comprobar que sea legible, completo y correcto.</p></div><div class="card"><h3>Antes de subir</h3><ul class="listclean"><li>Texto, sellos, firmas, fechas y nombres legibles.</li><li>Todas las páginas incluidas y orientadas correctamente.</li><li>Nombre de archivo descriptivo.</li><li>El documento coincide con la información registrada.</li><li>Si el título es extranjero, título/acta y resolución de convalidación en un solo PDF.</li></ul></div></div><div id="fileResults" class="filelist" aria-live="polite"></div><div class="notice danger"><strong>Privacidad:</strong> los soportes pueden contener datos personales. Esta guía no necesita que compartas tus documentos. Si usas un dispositivo compartido, cierra la página al terminar.</div></section>
-<section id="certificados" class="section"><h2>¿Tu certificado contiene lo necesario?</h2><p class="sub">Marca los campos que has verificado en el documento. Esto no valida autenticidad, firma, competencia de quien expide ni el contenido real del archivo.</p><div class="stepbar"><button class="active" data-cert="educacion" onclick="showCert('educacion')">Educación formal</button><button data-cert="experiencia" onclick="showCert('experiencia')">Experiencia</button><button data-cert="informal" onclick="showCert('informal')">Educación informal</button><button data-cert="trabajo" onclick="showCert('trabajo')">Educación para el trabajo</button><button data-cert="vinculo" onclick="showCert('vinculo')">Vínculo territorial</button></div>
-<div class="stepcontent" id="cert-educacion"><h3>Educación formal / título habilitante</h3><p>El anexo señala como soportes certificados, diplomas, actas de grado o títulos otorgados por la institución correspondiente. Si aplica, revisa también tarjeta o matrícula profesional.</p><div class="checklist"><label class="checkrow"><input type="checkbox"><span><b>Identifica al titular y la institución</b><small>Los nombres deben coincidir con los datos registrados.</small></span></label><label class="checkrow"><input type="checkbox"><span><b>Se identifica el título y la obtención del grado</b></span></label><label class="checkrow"><input type="checkbox"><span><b>El título habilita para el área y nivel de la vacante</b><small>Compruébalo en el Manual de Funciones y Requisitos Docentes aplicable.</small></span></label><label class="checkrow"><input type="checkbox"><span><b>Si el título es extranjero, uní título/acta y convalidación en un PDF</b><small>Aplica cuando corresponda.</small></span></label></div></div>
-<div class="stepcontent hidden" id="cert-experiencia"><h3>Certificación de experiencia</h3><p>Debe estar suscrita por autoridad competente. Si la expide una persona jurídica, la firma debe acompañarse de nombre completo y cargo legibles.</p><div class="checklist"><label class="checkrow"><input type="checkbox"><span><b>Nombre o razón social de la entidad que expide</b></span></label><label class="checkrow"><input type="checkbox"><span><b>Cargo(s) desempeñado(s) y fechas exactas de inicio y terminación</b><small>Día, mes y año. Evita expresiones como “actualmente”.</small></span></label><label class="checkrow"><input type="checkbox"><span><b>Funciones desempeñadas, cuando sean necesarias</b></span></label><label class="checkrow"><input type="checkbox"><span><b>Firma de autoridad competente y nombre/cargo legibles</b></span></label><label class="checkrow"><input type="checkbox"><span><b>Para prestación de servicios: objeto, fechas y obligaciones cumplidas</b><small>Según corresponda, certificación de ejecución o acta de liquidación/terminación.</small></span></label><label class="checkrow"><input type="checkbox"><span><b>Si fue docencia por horas, indica cantidad de horas dictadas</b><small>El anexo señala que sin esa información no se puede contabilizar ese tiempo.</small></span></label><label class="checkrow"><input type="checkbox"><span><b>Ordené las certificaciones de la más reciente a la más antigua</b></span></label></div></div>
-<div class="stepcontent hidden" id="cert-informal"><h3>Educación informal</h3><p>La constancia debe acreditar asistencia o participación en el evento formativo e incluir, como mínimo:</p><div class="checklist"><label class="checkrow"><input type="checkbox"><span><b>Nombre o razón social de la entidad que expide</b></span></label><label class="checkrow"><input type="checkbox"><span><b>Nombre del evento o curso</b></span></label><label class="checkrow"><input type="checkbox"><span><b>Fechas de realización</b></span></label><label class="checkrow"><input type="checkbox"><span><b>Intensidad horaria</b><small>Para la tabla específica, los rangos de horas se asocian a puntajes.</small></span></label><label class="checkrow"><input type="checkbox"><span><b>Registré los cursos del más reciente al más antiguo</b></span></label></div></div>
-<div class="stepcontent hidden" id="cert-trabajo"><h3>Educación para el trabajo y el desarrollo humano</h3><p>El anexo menciona el Certificado de Técnico Laboral por Competencias y el Certificado de Conocimientos Académicos. Como mínimo deben contener:</p><div class="checklist"><label class="checkrow"><input type="checkbox"><span><b>Nombre o razón social de la institución que lo otorga</b></span></label><label class="checkrow"><input type="checkbox"><span><b>Nombre y contenido del programa</b></span></label><label class="checkrow"><input type="checkbox"><span><b>Intensidad horaria expresada en horas</b><small>Si se expresa en días, indicar el número de horas por día.</small></span></label><label class="checkrow"><input type="checkbox"><span><b>Fechas de realización</b></span></label></div></div>
-<div class="stepcontent hidden" id="cert-vinculo"><h3>Vínculo territorial</h3><p>El anexo describe distintos subcriterios de vínculo. Solo cuenta el que corresponda según las reglas de ponderación.</p><div class="checklist"><label class="checkrow"><input type="checkbox"><span><b>Nacimiento en el municipio/departamento</b><small>El anexo indica acreditar nacimiento con cédula de ciudadanía.</small></span></label><label class="checkrow"><input type="checkbox"><span><b>Educación media académica o normalista superior en el territorio</b><small>Diploma, acta de grado o certificado de la institución.</small></span></label><label class="checkrow"><input type="checkbox"><span><b>Residencia acreditada con certificado de vecindad o equivalente</b><small>El anexo exige al menos un año de residencia y vigencia del certificado al postularse.</small></span></label></div></div><div class="notice"><strong>Importante:</strong> según el anexo, los soportes que no cumplan las condiciones pueden no ser tenidos en cuenta y, por regla general, no pueden corregirse después durante el agendamiento. Revisa antes de postularte.</div></section>
-<section id="puntaje" class="section"><h2>Entiende qué criterios pueden sumar puntos</h2><p class="sub">Resumen de los criterios del anexo técnico. No calcula una puntuación oficial: el resultado depende de los datos registrados, documentos aceptados, reglas de la vacante y validación de la secretaría.</p><div class="field"><label for="scoreTable">Selecciona la tabla</label><select id="scoreTable" onchange="renderScore()"><option value="general">Tabla general</option><option value="specific">Tabla específica</option></select></div><div id="scoreContent"></div><div class="notice"><strong>Cómo leer los puntos:</strong> no sumes todos los subcriterios de una categoría. El anexo indica que se otorga el subcriterio que más beneficie al aspirante según las reglas de cada criterio. El puntaje no garantiza quedar seleccionado.</div><div class="card"><h3>Qué ocurre después de postularte</h3><ol class="listclean"><li>El sistema hace una preselección automática de los tres candidatos con mayor ponderación.</li><li>La secretaría verifica requisitos y soportes durante el agendamiento.</li><li>El orden de puntuación determina el orden de selección, sujeto a validación y reglas especiales.</li><li>Puede existir fase adicional si está aprobada y aplica a la vacante.</li></ol></div></section>
-<section id="quiz" class="section"><h2>Simulacro: ¿estás listo para postularte?</h2><p class="sub">Responde y revisa la explicación de cada respuesta. Este ejercicio enseña reglas del anexo; no predice resultados ni reemplaza los manuales oficiales.</p><form id="quizForm">
-<fieldset class="quizq"><legend>1. ¿Cuál es el límite técnico para cada documento cargado?</legend><label class="option"><input type="radio" name="q1" value="a"> 5 MB, en cualquier formato</label><label class="option"><input type="radio" name="q1" value="b"> Máximo 1 MB, en PDF y legible</label><label class="option"><input type="radio" name="q1" value="c"> 1 MB por toda la hoja de vida</label><div class="feedback" data-feedback="q1"></div></fieldset>
-<fieldset class="quizq"><legend>2. ¿Cuándo se tienen en cuenta los documentos para una postulación?</legend><label class="option"><input type="radio" name="q2" value="a"> Los que se carguen después de la entrevista</label><label class="option"><input type="radio" name="q2" value="b"> Los cargados hasta el momento de postularse</label><label class="option"><input type="radio" name="q2" value="c"> Cualquier documento enviado por correo después</label><div class="feedback" data-feedback="q2"></div></fieldset>
-<fieldset class="quizq"><legend>3. ¿Qué debe contener una certificación de experiencia?</legend><label class="option"><input type="radio" name="q3" value="a"> Solo el nombre del empleador</label><label class="option"><input type="radio" name="q3" value="b"> Entidad expedidora, cargo, fechas exactas y los demás campos exigibles</label><label class="option"><input type="radio" name="q3" value="c"> Una hoja de vida firmada por el aspirante</label><div class="feedback" data-feedback="q3"></div></fieldset>
-<fieldset class="quizq"><legend>4. ¿Qué pasa mientras estás en estado postulado, preseleccionado o seleccionado?</legend><label class="option"><input type="radio" name="q4" value="a"> Puedes postularte simultáneamente a todas las vacantes</label><label class="option"><input type="radio" name="q4" value="b"> No puedes postularte a otra vacante hasta que finalice el proceso</label><label class="option"><input type="radio" name="q4" value="c"> Puedes editar los soportes de esa postulación en cualquier momento</label><div class="feedback" data-feedback="q4"></div></fieldset>
-<fieldset class="quizq"><legend>5. ¿Qué determina que un título sirva para una vacante?</legend><label class="option"><input type="radio" name="q5" value="a"> Que el aspirante lo considere relacionado</label><label class="option"><input type="radio" name="q5" value="b"> Que esté habilitado para el área y nivel conforme al Manual de Funciones</label><label class="option"><input type="radio" name="q5" value="c"> Que el archivo tenga un nombre correcto</label><div class="feedback" data-feedback="q5"></div></fieldset>
-<fieldset class="quizq"><legend>6. ¿Qué información mínima debe tener un certificado de educación informal?</legend><label class="option"><input type="radio" name="q6" value="a"> Institución, nombre del evento, fechas e intensidad horaria</label><label class="option"><input type="radio" name="q6" value="b"> Solo el nombre del curso</label><label class="option"><input type="radio" name="q6" value="c"> Únicamente el número de horas</label><div class="feedback" data-feedback="q6"></div></fieldset>
-<div class="actions"><button class="btn primary" type="submit">Calificar simulacro</button><button class="btn" type="button" onclick="resetQuiz()">Volver a intentar</button></div></form><div class="card hidden" id="quizResult" aria-live="polite"><div class="eyebrow">Resultado del simulacro</div><div class="score" id="quizScore"></div><p id="quizMessage"></p><button class="btn" onclick="go('documentos')">Volver a mi lista de preparación</button></div></section>
-</main><footer class="footer"><b>Alcance y fuentes.</b> Guía educativa elaborada a partir de la Resolución MEN 003593 del 27 de marzo de 2024 y el Anexo Técnico de Sistema Maestro del 4 de abril de 2024 compartidos en esta conversación. Resume puntos operativos y documentales; no es una herramienta oficial del Ministerio, no accede a tu cuenta, no sube archivos a Sistema Maestro, no autentica certificados ni garantiza preselección. Ante dudas, prevalecen la norma completa, el manual de usuario vigente y las indicaciones oficiales de la vacante.</footer></div>
-<script>
-const tasks=[
-['Base','Confirmé que mi título habilita para el área y nivel de la vacante','Consulta el Manual de Funciones y Requisitos Docentes; no te inscribas si no cumples los requisitos generales.'],['Base','Tengo listo mi documento de identidad en PDF','El anexo pide adjuntar documento de identificación en el perfil.'],['Base','Completé datos básicos, Educación Formal y Perfil Educativo','El registro se realiza una sola vez; actualiza el perfil cuando el sistema te lo permita.'],['Base','Revisé que cada PDF pese como máximo 1 MB y sea legible','Verifica páginas, nombres, fechas, sellos y firmas.'],['Base','Confirmé qué tabla aplica a la vacante','No asumas la tabla: revisa cómo fue publicada la vacante y las condiciones aplicables.'],['Educación','Adjunté el soporte del título habilitante','Diploma, acta, certificado o título conforme al anexo y al requisito del cargo.'],['Educación','Si mi título es extranjero, uní título/acta y convalidación en un solo PDF','Aplica solo cuando corresponda.'],['Experiencia','Revisé fechas exactas, cargo, entidad expedidora y firma en certificados laborales','Funciones cuando sean necesarias; no uses “actualmente” en lugar de fecha de terminación.'],['Experiencia','Ordené los certificados de experiencia del más reciente al más antiguo','Si es docencia por horas, comprueba que indique las horas dictadas.'],['Puntaje opcional','Revisé los soportes de posgrados que quiero acreditar','Especialización, maestría o doctorado, según la tabla que aplique.'],['Puntaje opcional','Revisé si tengo soporte de Saber Pro o Saber TyT','El anexo indica que el dato se reporta por ICFES; no cargues un documento adicional para puntuar este criterio salvo indicación oficial.'],['Puntaje opcional','Si aplica, reuní los soportes de vínculo territorial','Nacimiento, educación media/normalista o residencia, según el subcriterio.'],['Puntaje opcional','Si aplica tabla específica, revisé certificados de educación para el trabajo e informal','Comprueba institución, programa/evento, fechas, horas y campos mínimos.'],['Antes de postularme','Verifiqué el área, entidad territorial y requisitos de la vacante','No postules si no cumples el perfil exigido.'],['Antes de postularme','Revisé el plazo de 24 horas y sé que no podré editar soportes tras postularme','Solo cuentan los documentos cargados hasta el momento de la postulación.'],['Antes de postularme','Confirmé correo personal y datos de contacto','El anexo recomienda evitar correo institucional y revisar permanentemente el sistema.']];
-function loadChecks(){let saved={};try{saved=JSON.parse(localStorage.getItem('sm_checks')||'{}')}catch(e){}const el=document.getElementById('checklist');let last='';el.innerHTML='';tasks.forEach((x,i)=>{if(x[0]!==last){let h=document.createElement('h3');h.textContent=x[0];h.style.margin='18px 0 4px';el.append(h);last=x[0]}let lab=document.createElement('label');lab.className='checkrow';let inp=document.createElement('input');inp.type='checkbox';inp.checked=!!saved[i];inp.addEventListener('change',()=>{saved[i]=inp.checked;try{localStorage.setItem('sm_checks',JSON.stringify(saved))}catch(e){}updateProgress()});let span=document.createElement('span'),b=document.createElement('b'),sm=document.createElement('small');b.textContent=x[1];sm.textContent=x[2];span.append(b,sm);lab.append(inp,span);el.append(lab)});updateProgress()}
-function updateProgress(){let a=[...document.querySelectorAll('#checklist input')],n=a.filter(x=>x.checked).length,p=Math.round(n/Math.max(1,a.length)*100);document.getElementById('checkCount').textContent=n+' de '+a.length;document.getElementById('checkBar').style.width=p+'%';document.getElementById('routePercent').textContent=p+'%';document.getElementById('routeBar').style.width=p+'%'}function resetChecks(){if(confirm('¿Quieres desmarcar toda tu lista de preparación?')){try{localStorage.removeItem('sm_checks')}catch(e){}loadChecks()}}
-function go(id){document.querySelectorAll('.section').forEach(s=>s.classList.toggle('active',s.id===id));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));window.scrollTo({top:0,behavior:'smooth'});if(id==='puntaje')renderScore()}
-document.getElementById('targetArea').addEventListener('change',e=>document.getElementById('specialSan').classList.toggle('hidden',!e.target.value.includes('San Andrés')));
-document.getElementById('ageGroup').addEventListener('change',e=>{if(e.target.value==='general'||e.target.value==='specific'){document.getElementById('scoreTable').value=e.target.value;renderScore()} });
-function showCert(id){document.querySelectorAll('[id^="cert-"]').forEach(x=>x.classList.toggle('hidden',x.id!=='cert-'+id));document.querySelectorAll('[data-cert]').forEach(x=>x.classList.toggle('active',x.dataset.cert===id))}
-const generalRows=[['Educación formal mínima','Licenciado / normalista / tecnólogo en educación',10],['Educación formal mínima','Título profesional no licenciado',5],['Saber Pro / Saber TyT','Quintil 5 o percentil 81–100',10],['Saber Pro / Saber TyT','Quintil 4 o percentil 61–80',8],['Saber Pro / Saber TyT','Quintil 3 o percentil 41–60',5],['Experiencia docente en niveles señalados','Municipio de la vacante: 7 puntos por año (hasta 5 años)',35],['Experiencia docente en niveles señalados','Departamento de la vacante: 5 puntos por año (hasta 5 años)',25],['Experiencia docente en niveles señalados','Otras zonas de Colombia: 3 puntos por año (hasta 5 años)',15],['Experiencia docente en cualquier nivel','2 puntos por año (máximo del criterio)',10],['Vínculo territorial','Nacimiento: municipio 15 / departamento 9',15],['Vínculo territorial','Educación media/normalista: municipio 12 / departamento 7',12],['Vínculo territorial','Residencia: municipio 9 / departamento 5',9],['Educación formal adicional','Doctorado: con vínculo 20 / sin vínculo 15',20],['Educación formal adicional','Maestría: con vínculo 15 / sin vínculo 10',15],['Educación formal adicional','Especialización: con vínculo 10 / sin vínculo 5',10]];
-const specificRows=[['Título orientado a la docencia','Licenciado / normalista / tecnólogo en educación',20],['Título orientado a la docencia','Título profesional no licenciado',10],['Saber Pro / Saber TyT','Quintil 5 o percentil 81–100',15],['Saber Pro / Saber TyT','Quintil 4 o percentil 61–80',10],['Saber Pro / Saber TyT','Quintil 3 o percentil 41–60',8],['Educación formal adicional','Doctorado',30],['Educación formal adicional','Maestría',20],['Educación formal adicional','Especialización',10],['Educación para el trabajo y desarrollo humano','Formación académica o técnico laboral (máximo del criterio)',10],['Educación informal','120–159 horas',10],['Educación informal','96–119 horas',8],['Educación informal','72–95 horas',6],['Educación informal','48–71 horas',4],['Educación informal','24–47 horas',2],['Vínculo territorial','Nacimiento: municipio 15 / departamento 9',15],['Vínculo territorial','Educación media/normalista: municipio 12 / departamento 7',12],['Vínculo territorial','Residencia: municipio 9 / departamento 5',9]];
-function renderScore(){let type=document.getElementById('scoreTable').value,rows=type==='general'?generalRows:specificRows,c=document.getElementById('scoreContent');let intro=type==='general'?'La tabla general totaliza 100 puntos: educación formal mínima (10), Saber Pro/TyT (10), experiencia en niveles señalados (35), experiencia en cualquier nivel (10), vínculo territorial (15) y educación formal adicional (20).':'La tabla específica totaliza 100 puntos. El anexo la describe para vacantes dirigidas a jóvenes de 18 a 28 años sin experiencia; confirma siempre la tabla indicada en la vacante y las condiciones particulares.';let body=rows.map(r=>'<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td class="points">'+r[2]+'</td></tr>').join('');c.innerHTML='<div class="notice">'+intro+'</div><div class="tablewrap"><table><thead><tr><th>Criterio</th><th>Subcriterio resumido</th><th>Puntos</th></tr></thead><tbody>'+body+'</tbody></table></div>'+(type==='general'?'<p class="small">En experiencia docente en niveles de educación inicial, preescolar, básica, secundaria y media, los puntos por subcriterio se suman hasta cinco años y hasta 35 puntos. En educación formal adicional, se distingue si acredita o no vínculo territorial.</p>':'<p class="small">En educación informal, el máximo del criterio es 10 puntos, según los rangos de horas de la tabla. El anexo indica que se otorga un solo subcriterio por criterio, el que más beneficie al aspirante.</p><div class="notice">El anexo establece prioridad especial para jóvenes de 18 a 28 años que estuvieron bajo custodia y protección del Sistema Nacional de Bienestar Familiar, si cumplen las condiciones allí señaladas. Verifica la norma completa y la vacante concreta.</div>')}
-document.getElementById('pdfFiles').addEventListener('change',e=>{const results=document.getElementById('fileResults');results.innerHTML='';[...e.target.files].forEach(f=>{const isPdf=f.name.toLowerCase().endsWith('.pdf')||f.type==='application/pdf',sizeOk=f.size<=1024*1024;const card=document.createElement('div');card.className='fileitem';const top=document.createElement('div');top.className='filetop';const title=document.createElement('b');title.textContent=f.name;const badges=document.createElement('div');const s1=document.createElement('span');s1.className='status '+(isPdf?'ok':'bad');s1.textContent=isPdf?'PDF detectado':'No parece PDF';const s2=document.createElement('span');s2.className='status '+(sizeOk?'ok':'bad');s2.textContent=sizeOk?(f.size/1024).toFixed(0)+' KB':'Supera 1 MB';badges.append(s1,document.createTextNode(' '),s2);top.append(title,badges);const p=document.createElement('p');p.className='small';p.textContent=(isPdf&&sizeOk?'Revisión técnica básica superada. ':'Requiere atención. ')+(isPdf?'Aún debes abrirlo y comprobar que sea legible, completo y correcto.':'Convierte o guarda el documento como PDF antes de cargarlo.');card.append(top,p);results.append(card)})});
-const answers={q1:'b',q2:'b',q3:'b',q4:'b',q5:'b',q6:'a'},explanations={q1:'El anexo exige que cada documento cargado sea PDF, legible y no exceda 1 MB.',q2:'Solo se tienen en cuenta los documentos cargados hasta el momento de la postulación; después no puedes actualizar los soportes de esa postulación.',q3:'La certificación debe identificar la entidad y el empleo, indicar fechas exactas y cumplir los requisitos de firma y contenido aplicables.',q4:'El anexo indica que, en esos estados, no puedes postularte a otra vacante hasta que finalice el proceso.',q5:'Debes verificar que el título esté habilitado para el área y nivel conforme al manual.',q6:'La constancia debe incluir entidad expedidora, nombre del evento, fechas de realización e intensidad horaria.'};
-document.getElementById('quizForm').addEventListener('submit',e=>{e.preventDefault();let score=0;Object.keys(answers).forEach(q=>{const chosen=document.querySelector('input[name="'+q+'"]:checked'),ok=!!chosen&&chosen.value===answers[q];if(ok)score++;const fb=document.querySelector('[data-feedback="'+q+'"]');fb.className='feedback show '+(ok?'correct':'incorrect');fb.textContent=(ok?'Correcto. ':'Revisa esta regla. ')+explanations[q]});document.getElementById('quizResult').classList.remove('hidden');document.getElementById('quizScore').textContent=score+' / 6';document.getElementById('quizMessage').textContent=score===6?'Excelente: reconoces las reglas documentales principales. Revisa de todas formas los requisitos de la vacante y los manuales oficiales.':score>=4?'Buen avance. Repasa las explicaciones marcadas y vuelve a intentarlo.':'Repasa la ruta y las listas de verificación; los errores documentales pueden afectar la validación de tus soportes.';document.getElementById('quizResult').scrollIntoView({behavior:'smooth',block:'center'})});function resetQuiz(){document.getElementById('quizForm').reset();document.querySelectorAll('.feedback').forEach(f=>{f.className='feedback';f.textContent=''});document.getElementById('quizResult').classList.add('hidden')}
-loadChecks();renderScore();
-</script></body></html>
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#101827">
+    <title>Guía de preparación | Sistema Maestro</title>
+    <style>
+        :root {
+            --bg: #0b1220;
+            --p: #121e30;
+            --p2: #18263a;
+            --line: #2b3b52;
+            --ink: #eef4fb;
+            --muted: #a8b7ca;
+            --blue: #78b7ff;
+            --cyan: #68e0d0;
+            --gold: #ffd37c;
+            --red: #ff9292;
+            --green: #8de0ad
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            background: radial-gradient(ellipse at 15% -10%, #1d3a5b, transparent 36%), var(--bg);
+            color: var(--ink);
+            font: 16px/1.55 system-ui, -apple-system, sans-serif
+        }
+
+        .wrap {
+            max-width: 1150px;
+            margin: auto;
+            padding: 22px
+        }
+
+        .hero {
+            padding: 28px 0
+        }
+
+        .eyebrow {
+            color: var(--cyan);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            font-size: .75rem
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.6rem);
+            line-height: 1.07;
+            max-width: 900px;
+            margin: 12px 0
+        }
+
+        h2 {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            margin: 0 0 8px
+        }
+
+        h3 {
+            margin: 0 0 8px;
+            font-size: 1.08rem
+        }
+
+        p {
+            margin: 8px 0 14px
+        }
+
+        .hero p,
+        .sub,
+        .small {
+            color: var(--muted)
+        }
+
+        .hero p {
+            max-width: 800px;
+            font-size: 1.08rem
+        }
+
+        .btn {
+            border: 1px solid var(--line);
+            background: var(--p2);
+            color: var(--ink);
+            padding: 10px 14px;
+            border-radius: 11px;
+            font: inherit;
+            font-weight: 750;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block
+        }
+
+        .btn:hover {
+            border-color: var(--blue);
+            transform: translateY(-1px)
+        }
+
+        .btn.primary {
+            background: var(--blue);
+            color: #071322;
+            border-color: var(--blue)
+        }
+
+        .btn.ghost {
+            background: transparent
+        }
+
+        .actions {
+            display: flex;
+            gap: 9px;
+            flex-wrap: wrap;
+            margin-top: 16px
+        }
+
+        .nav {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            padding: 9px 0;
+            background: #0b1220ed;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--line)
+        }
+
+        .nav button {
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--muted);
+            padding: 9px 11px;
+            border-radius: 9px;
+            cursor: pointer;
+            font: inherit
+        }
+
+        .nav button.active,
+        .nav button:hover {
+            background: var(--p2);
+            border-color: var(--line);
+            color: var(--ink)
+        }
+
+        main {
+            padding: 22px 0 42px
+        }
+
+        .section {
+            display: none;
+            animation: enter .3s ease
+        }
+
+        .section.active {
+            display: block
+        }
+
+        @keyframes enter {
+            from {
+                opacity: 0;
+                transform: translateY(7px)
+            }
+
+            to {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 13px;
+            margin: 18px 0
+        }
+
+        .grid.two {
+            grid-template-columns: repeat(2, minmax(0, 1fr))
+        }
+
+        .card {
+            background: linear-gradient(160deg, #17263a, #101a2a);
+            border: 1px solid var(--line);
+            border-radius: 17px;
+            padding: 18px;
+            box-shadow: 0 14px 40px #0003
+        }
+
+        .card p,
+        .card li {
+            color: var(--muted)
+        }
+
+        .num {
+            display: inline-grid;
+            place-items: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            background: #254363;
+            color: var(--blue);
+            font-weight: 900;
+            margin-bottom: 10px
+        }
+
+        .tag {
+            display: inline-block;
+            border: 1px solid var(--line);
+            border-radius: 99px;
+            padding: 4px 9px;
+            color: var(--muted);
+            font-size: .78rem;
+            font-weight: 700
+        }
+
+        .notice {
+            border: 1px solid #7a6236;
+            background: #342a19;
+            border-radius: 13px;
+            padding: 14px 16px;
+            color: #ffe7b6;
+            margin: 17px 0
+        }
+
+        .notice strong {
+            color: #fff2d6
+        }
+
+        .notice.danger {
+            border-color: #74414b;
+            background: #321d27;
+            color: #ffc5cb
+        }
+
+        .notice.good {
+            border-color: #2f6b57;
+            background: #142d2a;
+            color: #b7f6d3
+        }
+
+        .progressbox {
+            background: var(--p);
+            border: 1px solid var(--line);
+            padding: 15px;
+            border-radius: 15px;
+            margin: 15px 0
+        }
+
+        .progressline {
+            height: 9px;
+            background: #26354a;
+            border-radius: 99px;
+            overflow: hidden;
+            margin: 10px 0
+        }
+
+        .progressline span {
+            display: block;
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, var(--blue), var(--cyan));
+            transition: width .25s
+        }
+
+        .checklist {
+            display: grid;
+            gap: 8px
+        }
+
+        .checkrow {
+            display: flex;
+            gap: 11px;
+            align-items: flex-start;
+            padding: 12px;
+            border: 1px solid var(--line);
+            background: #111c2b;
+            border-radius: 11px
+        }
+
+        .checkrow input {
+            width: 18px;
+            height: 18px;
+            margin-top: 4px;
+            accent-color: var(--cyan);
+            flex-shrink: 0
+        }
+
+        .checkrow b {
+            display: block
+        }
+
+        .checkrow small {
+            display: block;
+            color: var(--muted);
+            margin-top: 3px
+        }
+
+        .field {
+            display: grid;
+            gap: 6px;
+            margin: 12px 0
+        }
+
+        .field label {
+            font-weight: 750
+        }
+
+        .field input,
+        .field select {
+            background: #0c1625;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 11px;
+            color: var(--ink);
+            width: 100%;
+            font: inherit
+        }
+
+        .twofields {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px
+        }
+
+        .filelist {
+            display: grid;
+            gap: 10px;
+            margin-top: 14px
+        }
+
+        .fileitem {
+            padding: 13px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: #0e1928
+        }
+
+        .filetop {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: start
+        }
+
+        .status {
+            font-size: .78rem;
+            font-weight: 900;
+            border-radius: 99px;
+            padding: 4px 8px;
+            white-space: nowrap;
+            display: inline-block
+        }
+
+        .status.ok {
+            background: #183c30;
+            color: #a5f0c2
+        }
+
+        .status.bad {
+            background: #49242b;
+            color: #ffc0c8
+        }
+
+        .tablewrap {
+            overflow: auto;
+            border: 1px solid var(--line);
+            border-radius: 13px;
+            margin: 14px 0
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            min-width: 600px;
+            background: #101b2a
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 11px 13px;
+            border-bottom: 1px solid var(--line);
+            vertical-align: top
+        }
+
+        th {
+            background: #1a2a40;
+            color: #dcecff
+        }
+
+        td {
+            color: #d4dfeb
+        }
+
+        tr:last-child td {
+            border-bottom: 0
+        }
+
+        .points {
+            font-weight: 900;
+            color: var(--cyan)
+        }
+
+        .stepbar {
+            display: flex;
+            gap: 7px;
+            flex-wrap: wrap;
+            margin: 15px 0
+        }
+
+        .stepbar button {
+            border: 1px solid var(--line);
+            background: var(--p);
+            color: var(--muted);
+            border-radius: 9px;
+            padding: 9px 11px;
+            cursor: pointer
+        }
+
+        .stepbar button.active {
+            color: #071322;
+            background: var(--cyan);
+            border-color: var(--cyan)
+        }
+
+        .stepcontent {
+            padding: 18px;
+            border: 1px solid var(--line);
+            border-radius: 15px;
+            background: var(--p);
+            min-height: 150px
+        }
+
+        .hidden {
+            display: none !important
+        }
+
+        .listclean {
+            padding-left: 20px
+        }
+
+        .listclean li {
+            margin: 7px 0
+        }
+
+        .quizq {
+            padding: 16px;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            margin: 12px 0;
+            background: #111d2c
+        }
+
+        .quizq legend {
+            font-weight: 800;
+            padding: 0 5px
+        }
+
+        .option {
+            display: flex;
+            gap: 9px;
+            padding: 8px 10px;
+            border-radius: 9px;
+            color: var(--muted);
+            cursor: pointer
+        }
+
+        .option:hover {
+            background: #1a2a40
+        }
+
+        .option input {
+            accent-color: var(--cyan);
+            margin-top: 5px
+        }
+
+        .feedback {
+            display: none;
+            padding: 10px 12px;
+            border-radius: 10px;
+            margin-top: 10px
+        }
+
+        .feedback.show {
+            display: block
+        }
+
+        .feedback.correct {
+            background: #17372e;
+            color: #b5f2cd
+        }
+
+        .feedback.incorrect {
+            background: #41242a;
+            color: #ffc2c7
+        }
+
+        .score {
+            font-size: 1.5rem;
+            font-weight: 900
+        }
+
+        .footer {
+            border-top: 1px solid var(--line);
+            padding: 22px 0 35px;
+            color: var(--muted);
+            font-size: .86rem
+        }
+
+        @media(max-width:800px) {
+
+            .grid,
+            .grid.two,
+            .twofields {
+                grid-template-columns: 1fr
+            }
+
+            .wrap {
+                padding: 15px
+            }
+
+            .nav {
+                position: relative
+            }
+
+            .filetop {
+                display: block
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+
+            *,
+            *:before,
+            *:after {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="hero">
+            <div class="eyebrow">Guía práctica · Resolución 003593 de 2024 + anexo técnico</div>
+            <h1>Prepara tu perfil antes de postularte a Sistema Maestro</h1>
+            <p>Una guía interactiva para organizar tus soportes, comprobar requisitos documentales, entender los
+                criterios de ponderación y practicar antes de enviar una postulación real.</p>
+            <div class="actions"><button class="btn primary" onclick="go('ruta')">Empezar mi preparación
+                    →</button><button class="btn" onclick="go('archivos')">Revisar archivos PDF</button></div>
+        </header>
+        <nav class="nav" aria-label="Secciones de la guía"><button class="active" data-tab="ruta"
+                onclick="go('ruta')">1. Mi ruta</button><button data-tab="documentos" onclick="go('documentos')">2.
+                Lista de documentos</button><button data-tab="archivos" onclick="go('archivos')">3. Revisar
+                PDF</button><button data-tab="certificados" onclick="go('certificados')">4. Revisar
+                certificados</button><button data-tab="puntaje" onclick="go('puntaje')">5. Puntajes</button><button
+                data-tab="quiz" onclick="go('quiz')">6. Simulacro</button></nav>
+        <main>
+            <section id="ruta" class="section active">
+                <h2>Tu preparación en seis momentos</h2>
+                <p class="sub">Sigue la ruta en orden. No necesitas tener todos los soportes para comenzar; la lista te
+                    ayuda a identificar qué tienes y qué debes solicitar.</p>
+                <div class="grid">
+                    <div class="card">
+                        <div class="num">01</div>
+                        <h3>Confirma que puedes aplicar</h3>
+                        <p>Comprueba que tu título está habilitado para el área y el nivel de desempeño de la vacante.
+                            Consulta el Manual de Funciones y Requisitos Docentes aplicable.</p><span class="tag">Antes
+                            de cargar documentos</span>
+                    </div>
+                    <div class="card">
+                        <div class="num">02</div>
+                        <h3>Define tu tabla</h3>
+                        <p>Identifica si la vacante usa tabla general o específica. El anexo describe la tabla
+                            específica para jóvenes de 18 a 28 años sin experiencia y las reglas especiales que puedan
+                            aplicar.</p><span class="tag">Confirma en la vacante</span>
+                    </div>
+                    <div class="card">
+                        <div class="num">03</div>
+                        <h3>Organiza los soportes</h3>
+                        <p>Reúne identificación, título habilitante y documentos adicionales que quieras acreditar para
+                            los criterios de tu tabla.</p><span class="tag">Información verificable</span>
+                    </div>
+                    <div class="card">
+                        <div class="num">04</div>
+                        <h3>Revisa cada archivo</h3>
+                        <p>Convierte a PDF, verifica que se lea completo y que pese como máximo 1 MB por documento.
+                            Comprueba la carga en la plataforma.</p><span class="tag">PDF · hasta 1 MB</span>
+                    </div>
+                    <div class="card">
+                        <div class="num">05</div>
+                        <h3>Actualiza tu perfil</h3>
+                        <p>Completa los módulos de datos básicos, Educación Formal y Perfil Educativo. Registra los
+                            datos de cada certificado de forma coherente con el soporte.</p><span class="tag">Antes de
+                            postularte</span>
+                    </div>
+                    <div class="card">
+                        <div class="num">06</div>
+                        <h3>Postúlate a tiempo</h3>
+                        <p>Revisa la vacante, sus requisitos y su plazo. El anexo establece una ventana de 24 horas
+                            desde la publicación; tras postularte no puedes modificar los soportes de esa postulación.
+                        </p><span class="tag">Ventana de 24 horas</span>
+                    </div>
+                </div>
+                <div class="notice"><strong>Regla que puede marcar la diferencia:</strong> la secretaría valida los
+                    requisitos y soportes de los candidatos preseleccionados. Un puntaje calculado en el sistema no
+                    sustituye el cumplimiento del perfil ni la validez de los documentos.</div>
+                <div class="progressbox">
+                    <div class="filetop"><b>Mi avance de preparación</b><span class="score" id="routePercent">0%</span>
+                    </div>
+                    <p class="small">Marca las tareas completadas en la lista de documentos.</p>
+                    <div class="progressline"><span id="routeBar"></span></div><button class="btn"
+                        onclick="go('documentos')">Abrir lista de documentos →</button>
+                </div>
+                <div class="card">
+                    <h3>Acceso a las fuentes oficiales</h3>
+                    <p>Consulta vacantes y manuales publicados por el Ministerio de Educación Nacional.</p>
+                    <div class="actions"><a class="btn primary" href="https://sistemamaestro.mineducacion.gov.co"
+                            target="_blank" rel="noopener">Abrir Sistema Maestro ↗</a><a class="btn"
+                            href="https://www.mineducacion.gov.co/portal/micrositios-institucionales/Sistema-Maestro/"
+                            target="_blank" rel="noopener">Micrositio y manuales ↗</a></div>
+                    <p class="small">Confirma en el portal la versión vigente de las reglas y las vacantes publicadas.
+                    </p>
+                </div>
+            </section>
+            <section id="documentos" class="section">
+                <h2>Lista personal de preparación</h2>
+                <p class="sub">Marca cada elemento solo cuando lo hayas verificado. El paquete exacto depende de tu
+                    perfil, la tabla de la vacante y los criterios por los que quieras obtener puntaje.</p>
+                <div class="twofields">
+                    <div class="field"><label for="ageGroup">¿Qué grupo describe tu postulación?</label><select
+                            id="ageGroup">
+                            <option value="general">Tabla general (por ejemplo, 29 años o más)</option>
+                            <option value="specific">Tabla específica (18 a 28 años, según condiciones de la vacante)
+                            </option>
+                            <option value="unsure">Todavía no lo he confirmado</option>
+                        </select></div>
+                    <div class="field"><label for="targetArea">¿Qué vas a preparar?</label><select id="targetArea">
+                            <option>Vacante docente</option>
+                            <option>Vacante de preescolar o primaria</option>
+                            <option>Vacante en San Andrés, Providencia o Santa Catalina</option>
+                        </select></div>
+                </div>
+                <div id="specialSan" class="notice danger hidden"><strong>Vacantes en San Andrés:</strong> el anexo
+                    menciona requisitos especiales de residencia (certificado OCCRE) y dominio del inglés normalmente
+                    hablado. Verifica las reglas específicas antes de postularte.</div>
+                <div class="notice">Los archivos opcionales solo aportan puntaje si cumples el criterio y el documento
+                    satisface las condiciones. No cargues documentos irrelevantes ni información falsa.</div>
+                <div class="progressbox">
+                    <div class="filetop"><b>Avance de la lista</b><span id="checkCount" class="tag">0 de 0</span></div>
+                    <div class="progressline"><span id="checkBar"></span></div>
+                </div>
+                <div class="checklist" id="checklist"></div>
+                <div class="actions"><button class="btn" onclick="resetChecks()">Reiniciar lista</button><button
+                        class="btn primary" onclick="go('archivos')">Revisar mis PDF →</button></div>
+            </section>
+            <section id="archivos" class="section">
+                <h2>Revisión técnica de archivos PDF</h2>
+                <p class="sub">Selecciona archivos para comprobar en tu navegador el tipo declarado, la extensión y el
+                    tamaño. No se envían ni almacenan en un servidor; la herramienta no inspecciona el contenido
+                    jurídico ni garantiza que el sistema oficial acepte el archivo.</p>
+                <div class="grid two">
+                    <div class="card">
+                        <h3>Selecciona tus archivos</h3>
+                        <p>La regla del anexo es <b>un PDF legible de máximo 1 MB por documento</b>. Si un certificado
+                            requiere varias páginas, asegúrate de que estén todas incluidas.</p>
+                        <div class="field"><label for="pdfFiles">Archivos para revisar</label><input id="pdfFiles"
+                                type="file" accept="application/pdf,.pdf" multiple></div>
+                        <p class="small">La revisión es local. Abre también cada archivo para comprobar que sea legible,
+                            completo y correcto.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Antes de subir</h3>
+                        <ul class="listclean">
+                            <li>Texto, sellos, firmas, fechas y nombres legibles.</li>
+                            <li>Todas las páginas incluidas y orientadas correctamente.</li>
+                            <li>Nombre de archivo descriptivo.</li>
+                            <li>El documento coincide con la información registrada.</li>
+                            <li>Si el título es extranjero, título/acta y resolución de convalidación en un solo PDF.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="fileResults" class="filelist" aria-live="polite"></div>
+                <div class="notice danger"><strong>Privacidad:</strong> los soportes pueden contener datos personales.
+                    Esta guía no necesita que compartas tus documentos. Si usas un dispositivo compartido, cierra la
+                    página al terminar.</div>
+            </section>
+            <section id="certificados" class="section">
+                <h2>¿Tu certificado contiene lo necesario?</h2>
+                <p class="sub">Marca los campos que has verificado en el documento. Esto no valida autenticidad, firma,
+                    competencia de quien expide ni el contenido real del archivo.</p>
+                <div class="stepbar"><button class="active" data-cert="educacion"
+                        onclick="showCert('educacion')">Educación formal</button><button data-cert="experiencia"
+                        onclick="showCert('experiencia')">Experiencia</button><button data-cert="informal"
+                        onclick="showCert('informal')">Educación informal</button><button data-cert="trabajo"
+                        onclick="showCert('trabajo')">Educación para el trabajo</button><button data-cert="vinculo"
+                        onclick="showCert('vinculo')">Vínculo territorial</button></div>
+                <div class="stepcontent" id="cert-educacion">
+                    <h3>Educación formal / título habilitante</h3>
+                    <p>El anexo señala como soportes certificados, diplomas, actas de grado o títulos otorgados por la
+                        institución correspondiente. Si aplica, revisa también tarjeta o matrícula profesional.</p>
+                    <div class="checklist"><label class="checkrow"><input type="checkbox"><span><b>Identifica al titular
+                                    y la institución</b><small>Los nombres deben coincidir con los datos
+                                    registrados.</small></span></label><label class="checkrow"><input
+                                type="checkbox"><span><b>Se identifica el título y la obtención del
+                                    grado</b></span></label><label class="checkrow"><input type="checkbox"><span><b>El
+                                    título habilita para el área y nivel de la vacante</b><small>Compruébalo en el
+                                    Manual de Funciones y Requisitos Docentes aplicable.</small></span></label><label
+                            class="checkrow"><input type="checkbox"><span><b>Si el título es extranjero, uní título/acta
+                                    y convalidación en un PDF</b><small>Aplica cuando
+                                    corresponda.</small></span></label></div>
+                </div>
+                <div class="stepcontent hidden" id="cert-experiencia">
+                    <h3>Certificación de experiencia</h3>
+                    <p>Debe estar suscrita por autoridad competente. Si la expide una persona jurídica, la firma debe
+                        acompañarse de nombre completo y cargo legibles.</p>
+                    <div class="checklist"><label class="checkrow"><input type="checkbox"><span><b>Nombre o razón social
+                                    de la entidad que expide</b></span></label><label class="checkrow"><input
+                                type="checkbox"><span><b>Cargo(s) desempeñado(s) y fechas exactas de inicio y
+                                    terminación</b><small>Día, mes y año. Evita expresiones como
+                                    “actualmente”.</small></span></label><label class="checkrow"><input
+                                type="checkbox"><span><b>Funciones desempeñadas, cuando sean
+                                    necesarias</b></span></label><label class="checkrow"><input
+                                type="checkbox"><span><b>Firma de autoridad competente y nombre/cargo
+                                    legibles</b></span></label><label class="checkrow"><input
+                                type="checkbox"><span><b>Para prestación de servicios: objeto, fechas y obligaciones
+                                    cumplidas</b><small>Según corresponda, certificación de ejecución o acta de
+                                    liquidación/terminación.</small></span></label><label class="checkrow"><input
+                                type="checkbox"><span><b>Si fue docencia por horas, indica cantidad de horas
+                                    dictadas</b><small>El anexo señala que sin esa información no se puede contabilizar
+                                    ese tiempo.</small></span></label><label class="checkrow"><input
+                                type="checkbox"><span><b>Ordené las certificaciones de la más reciente a la más
+                                    antigua</b></span></label></div>
+                </div>
+                <div class="stepcontent hidden" id="cert-informal">
+                    <h3>Educación informal</h3>
+                    <p>La constancia debe acreditar asistencia o participación en el evento formativo e incluir, como
+                        mínimo:</p>
+                    <div class="checklist"><label class="checkrow"><input type="checkbox"><span><b>Nombre o razón social
+                                    de la entidad que expide</b></span></label><label class="checkrow"><input
+                                type="checkbox"><span><b>Nombre del evento o curso</b></span></label><label
+                            class="checkrow"><input type="checkbox"><span><b>Fechas de
+                                    realización</b></span></label><label class="checkrow"><input
+                                type="checkbox"><span><b>Intensidad horaria</b><small>Para la tabla específica, los
+                                    rangos de horas se asocian a puntajes.</small></span></label><label
+                            class="checkrow"><input type="checkbox"><span><b>Registré los cursos del más reciente al más
+                                    antiguo</b></span></label></div>
+                </div>
+                <div class="stepcontent hidden" id="cert-trabajo">
+                    <h3>Educación para el trabajo y el desarrollo humano</h3>
+                    <p>El anexo menciona el Certificado de Técnico Laboral por Competencias y el Certificado de
+                        Conocimientos Académicos. Como mínimo deben contener:</p>
+                    <div class="checklist"><label class="checkrow"><input type="checkbox"><span><b>Nombre o razón social
+                                    de la institución que lo otorga</b></span></label><label class="checkrow"><input
+                                type="checkbox"><span><b>Nombre y contenido del programa</b></span></label><label
+                            class="checkrow"><input type="checkbox"><span><b>Intensidad horaria expresada en
+                                    horas</b><small>Si se expresa en días, indicar el número de horas por
+                                    día.</small></span></label><label class="checkrow"><input
+                                type="checkbox"><span><b>Fechas de realización</b></span></label></div>
+                </div>
+                <div class="stepcontent hidden" id="cert-vinculo">
+                    <h3>Vínculo territorial</h3>
+                    <p>El anexo describe distintos subcriterios de vínculo. Solo cuenta el que corresponda según las
+                        reglas de ponderación.</p>
+                    <div class="checklist"><label class="checkrow"><input type="checkbox"><span><b>Nacimiento en el
+                                    municipio/departamento</b><small>El anexo indica acreditar nacimiento con cédula de
+                                    ciudadanía.</small></span></label><label class="checkrow"><input
+                                type="checkbox"><span><b>Educación media académica o normalista superior en el
+                                    territorio</b><small>Diploma, acta de grado o certificado de la
+                                    institución.</small></span></label><label class="checkrow"><input
+                                type="checkbox"><span><b>Residencia acreditada con certificado de vecindad o
+                                    equivalente</b><small>El anexo exige al menos un año de residencia y vigencia del
+                                    certificado al postularse.</small></span></label></div>
+                </div>
+                <div class="notice"><strong>Importante:</strong> según el anexo, los soportes que no cumplan las
+                    condiciones pueden no ser tenidos en cuenta y, por regla general, no pueden corregirse después
+                    durante el agendamiento. Revisa antes de postularte.</div>
+            </section>
+            <section id="puntaje" class="section">
+                <h2>Entiende qué criterios pueden sumar puntos</h2>
+                <p class="sub">Resumen de los criterios del anexo técnico. No calcula una puntuación oficial: el
+                    resultado depende de los datos registrados, documentos aceptados, reglas de la vacante y validación
+                    de la secretaría.</p>
+                <div class="field"><label for="scoreTable">Selecciona la tabla</label><select id="scoreTable"
+                        onchange="renderScore()">
+                        <option value="general">Tabla general</option>
+                        <option value="specific">Tabla específica</option>
+                    </select></div>
+                <div id="scoreContent"></div>
+                <div class="notice"><strong>Cómo leer los puntos:</strong> no sumes todos los subcriterios de una
+                    categoría. El anexo indica que se otorga el subcriterio que más beneficie al aspirante según las
+                    reglas de cada criterio. El puntaje no garantiza quedar seleccionado.</div>
+                <div class="card">
+                    <h3>Qué ocurre después de postularte</h3>
+                    <ol class="listclean">
+                        <li>El sistema hace una preselección automática de los tres candidatos con mayor ponderación.
+                        </li>
+                        <li>La secretaría verifica requisitos y soportes durante el agendamiento.</li>
+                        <li>El orden de puntuación determina el orden de selección, sujeto a validación y reglas
+                            especiales.</li>
+                        <li>Puede existir fase adicional si está aprobada y aplica a la vacante.</li>
+                    </ol>
+                </div>
+            </section>
+            <section id="quiz" class="section">
+                <h2>Simulacro: ¿estás listo para postularte?</h2>
+                <p class="sub">Responde y revisa la explicación de cada respuesta. Este ejercicio enseña reglas del
+                    anexo; no predice resultados ni reemplaza los manuales oficiales.</p>
+                <form id="quizForm">
+                    <fieldset class="quizq">
+                        <legend>1. ¿Cuál es el límite técnico para cada documento cargado?</legend><label
+                            class="option"><input type="radio" name="q1" value="a"> 5 MB, en cualquier
+                            formato</label><label class="option"><input type="radio" name="q1" value="b"> Máximo 1 MB,
+                            en PDF y legible</label><label class="option"><input type="radio" name="q1" value="c"> 1 MB
+                            por toda la hoja de vida</label>
+                        <div class="feedback" data-feedback="q1"></div>
+                    </fieldset>
+                    <fieldset class="quizq">
+                        <legend>2. ¿Cuándo se tienen en cuenta los documentos para una postulación?</legend><label
+                            class="option"><input type="radio" name="q2" value="a"> Los que se carguen después de la
+                            entrevista</label><label class="option"><input type="radio" name="q2" value="b"> Los
+                            cargados hasta el momento de postularse</label><label class="option"><input type="radio"
+                                name="q2" value="c"> Cualquier documento enviado por correo después</label>
+                        <div class="feedback" data-feedback="q2"></div>
+                    </fieldset>
+                    <fieldset class="quizq">
+                        <legend>3. ¿Qué debe contener una certificación de experiencia?</legend><label
+                            class="option"><input type="radio" name="q3" value="a"> Solo el nombre del
+                            empleador</label><label class="option"><input type="radio" name="q3" value="b"> Entidad
+                            expedidora, cargo, fechas exactas y los demás campos exigibles</label><label
+                            class="option"><input type="radio" name="q3" value="c"> Una hoja de vida firmada por el
+                            aspirante</label>
+                        <div class="feedback" data-feedback="q3"></div>
+                    </fieldset>
+                    <fieldset class="quizq">
+                        <legend>4. ¿Qué pasa mientras estás en estado postulado, preseleccionado o seleccionado?
+                        </legend><label class="option"><input type="radio" name="q4" value="a"> Puedes postularte
+                            simultáneamente a todas las vacantes</label><label class="option"><input type="radio"
+                                name="q4" value="b"> No puedes postularte a otra vacante hasta que finalice el
+                            proceso</label><label class="option"><input type="radio" name="q4" value="c"> Puedes editar
+                            los soportes de esa postulación en cualquier momento</label>
+                        <div class="feedback" data-feedback="q4"></div>
+                    </fieldset>
+                    <fieldset class="quizq">
+                        <legend>5. ¿Qué determina que un título sirva para una vacante?</legend><label
+                            class="option"><input type="radio" name="q5" value="a"> Que el aspirante lo considere
+                            relacionado</label><label class="option"><input type="radio" name="q5" value="b"> Que esté
+                            habilitado para el área y nivel conforme al Manual de Funciones</label><label
+                            class="option"><input type="radio" name="q5" value="c"> Que el archivo tenga un nombre
+                            correcto</label>
+                        <div class="feedback" data-feedback="q5"></div>
+                    </fieldset>
+                    <fieldset class="quizq">
+                        <legend>6. ¿Qué información mínima debe tener un certificado de educación informal?</legend>
+                        <label class="option"><input type="radio" name="q6" value="a"> Institución, nombre del evento,
+                            fechas e intensidad horaria</label><label class="option"><input type="radio" name="q6"
+                                value="b"> Solo el nombre del curso</label><label class="option"><input type="radio"
+                                name="q6" value="c"> Únicamente el número de horas</label>
+                        <div class="feedback" data-feedback="q6"></div>
+                    </fieldset>
+                    <div class="actions"><button class="btn primary" type="submit">Calificar simulacro</button><button
+                            class="btn" type="button" onclick="resetQuiz()">Volver a intentar</button></div>
+                </form>
+                <div class="card hidden" id="quizResult" aria-live="polite">
+                    <div class="eyebrow">Resultado del simulacro</div>
+                    <div class="score" id="quizScore"></div>
+                    <p id="quizMessage"></p><button class="btn" onclick="go('documentos')">Volver a mi lista de
+                        preparación</button>
+                </div>
+            </section>
+        </main>
+        <footer class="footer"><b>Alcance y fuentes.</b> Guía educativa elaborada a partir de la Resolución MEN 003593
+            del 27 de marzo de 2024 y el Anexo Técnico de Sistema Maestro del 4 de abril de 2024 compartidos en esta
+            conversación. Resume puntos operativos y documentales; no es una herramienta oficial del Ministerio, no
+            accede a tu cuenta, no sube archivos a Sistema Maestro, no autentica certificados ni garantiza preselección.
+            Ante dudas, prevalecen la norma completa, el manual de usuario vigente y las indicaciones oficiales de la
+            vacante.</footer>
+    </div>
+    <script>
+        const tasks = [
+            ['Revision base', 'Confirmé que mi título habilita para el área y nivel de la vacante', 'Consulta el Manual de Funciones y Requisitos Docentes; no te inscribas si no cumples los requisitos generales.'], ['Revision base', 'Tengo listo mi documento de identidad en PDF', 'El anexo pide adjuntar documento de identificación en el perfil.'], ['Revision base', 'Completé datos básicos, Educación Formal y Perfil Educativo', 'El registro se realiza una sola vez; actualiza el perfil cuando el sistema te lo permita.'], ['Revision base', 'Revisé que cada PDF pese como máximo 1 MB y sea legible', 'Verifica páginas, nombres, fechas, sellos y firmas.'], ['Revision base', 'Confirmé qué tabla aplica a la vacante', 'No asumas la tabla: revisa cómo fue publicada la vacante y las condiciones aplicables.'], ['Educación', 'Adjunté el soporte del título habilitante', 'Diploma, acta, certificado o título conforme al anexo y al requisito del cargo.'], ['Educación', 'Si mi título es extranjero, uní título/acta y convalidación en un solo PDF', 'Aplica solo cuando corresponda.'], ['Experiencia', 'Revisé fechas exactas, cargo, entidad expedidora y firma en certificados laborales', 'Funciones cuando sean necesarias; no uses “actualmente” en lugar de fecha de terminación.'], ['Experiencia', 'Ordené los certificados de experiencia del más reciente al más antiguo', 'Si es docencia por horas, comprueba que indique las horas dictadas.'], ['Puntaje opcional', 'Revisé los soportes de posgrados que quiero acreditar', 'Especialización, maestría o doctorado, según la tabla que aplique.'], ['Puntaje opcional', 'Revisé si tengo soporte de Saber Pro o Saber TyT', 'El anexo indica que el dato se reporta por ICFES; no cargues un documento adicional para puntuar este criterio salvo indicación oficial.'], ['Puntaje opcional', 'Si aplica, reuní los soportes de vínculo territorial', 'Nacimiento, educación media/normalista o residencia, según el subcriterio.'], ['Puntaje opcional', 'Si aplica tabla específica, revisé certificados de educación para el trabajo e informal', 'Comprueba institución, programa/evento, fechas, horas y campos mínimos.'], ['Antes de postularme', 'Verifiqué el área, entidad territorial y requisitos de la vacante', 'No postules si no cumples el perfil exigido.'], ['Antes de postularme', 'Revisé el plazo de 24 horas y sé que no podré editar soportes tras postularme', 'Solo cuentan los documentos cargados hasta el momento de la postulación.'], ['Antes de postularme', 'Confirmé correo personal y datos de contacto', 'El anexo recomienda evitar correo institucional y revisar permanentemente el sistema.']];
+        function loadChecks() { let saved = {}; try { saved = JSON.parse(localStorage.getItem('sm_checks') || '{}') } catch (e) { } const el = document.getElementById('checklist'); let last = ''; el.innerHTML = ''; tasks.forEach((x, i) => { if (x[0] !== last) { let h = document.createElement('h3'); h.textContent = x[0]; h.style.margin = '18px 0 4px'; el.append(h); last = x[0] } let lab = document.createElement('label'); lab.className = 'checkrow'; let inp = document.createElement('input'); inp.type = 'checkbox'; inp.checked = !!saved[i]; inp.addEventListener('change', () => { saved[i] = inp.checked; try { localStorage.setItem('sm_checks', JSON.stringify(saved)) } catch (e) { } updateProgress() }); let span = document.createElement('span'), b = document.createElement('b'), sm = document.createElement('small'); b.textContent = x[1]; sm.textContent = x[2]; span.append(b, sm); lab.append(inp, span); el.append(lab) }); updateProgress() }
+        function updateProgress() { let a = [...document.querySelectorAll('#checklist input')], n = a.filter(x => x.checked).length, p = Math.round(n / Math.max(1, a.length) * 100); document.getElementById('checkCount').textContent = n + ' de ' + a.length; document.getElementById('checkBar').style.width = p + '%'; document.getElementById('routePercent').textContent = p + '%'; document.getElementById('routeBar').style.width = p + '%' } function resetChecks() { if (confirm('¿Quieres desmarcar toda tu lista de preparación?')) { try { localStorage.removeItem('sm_checks') } catch (e) { } loadChecks() } }
+        function go(id) { document.querySelectorAll('.section').forEach(s => s.classList.toggle('active', s.id === id)); document.querySelectorAll('.nav button').forEach(b => b.classList.toggle('active', b.dataset.tab === id)); window.scrollTo({ top: 0, behavior: 'smooth' }); if (id === 'puntaje') renderScore() }
+        document.getElementById('targetArea').addEventListener('change', e => document.getElementById('specialSan').classList.toggle('hidden', !e.target.value.includes('San Andrés')));
+        document.getElementById('ageGroup').addEventListener('change', e => { if (e.target.value === 'general' || e.target.value === 'specific') { document.getElementById('scoreTable').value = e.target.value; renderScore() } });
+        function showCert(id) { document.querySelectorAll('[id^="cert-"]').forEach(x => x.classList.toggle('hidden', x.id !== 'cert-' + id)); document.querySelectorAll('[data-cert]').forEach(x => x.classList.toggle('active', x.dataset.cert === id)) }
+        const generalRows = [['Educación formal mínima', 'Licenciado / normalista / tecnólogo en educación', 10], ['Educación formal mínima', 'Título profesional no licenciado', 5], ['Saber Pro / Saber TyT', 'Quintil 5 o percentil 81–100', 10], ['Saber Pro / Saber TyT', 'Quintil 4 o percentil 61–80', 8], ['Saber Pro / Saber TyT', 'Quintil 3 o percentil 41–60', 5], ['Experiencia docente en niveles señalados', 'Municipio de la vacante: 7 puntos por año (hasta 5 años)', 35], ['Experiencia docente en niveles señalados', 'Departamento de la vacante: 5 puntos por año (hasta 5 años)', 25], ['Experiencia docente en niveles señalados', 'Otras zonas de Colombia: 3 puntos por año (hasta 5 años)', 15], ['Experiencia docente en cualquier nivel', '2 puntos por año (máximo del criterio)', 10], ['Vínculo territorial', 'Nacimiento: municipio 15 / departamento 9', 15], ['Vínculo territorial', 'Educación media/normalista: municipio 12 / departamento 7', 12], ['Vínculo territorial', 'Residencia: municipio 9 / departamento 5', 9], ['Educación formal adicional', 'Doctorado: con vínculo 20 / sin vínculo 15', 20], ['Educación formal adicional', 'Maestría: con vínculo 15 / sin vínculo 10', 15], ['Educación formal adicional', 'Especialización: con vínculo 10 / sin vínculo 5', 10]];
+        const specificRows = [['Título orientado a la docencia', 'Licenciado / normalista / tecnólogo en educación', 20], ['Título orientado a la docencia', 'Título profesional no licenciado', 10], ['Saber Pro / Saber TyT', 'Quintil 5 o percentil 81–100', 15], ['Saber Pro / Saber TyT', 'Quintil 4 o percentil 61–80', 10], ['Saber Pro / Saber TyT', 'Quintil 3 o percentil 41–60', 8], ['Educación formal adicional', 'Doctorado', 30], ['Educación formal adicional', 'Maestría', 20], ['Educación formal adicional', 'Especialización', 10], ['Educación para el trabajo y desarrollo humano', 'Formación académica o técnico laboral (máximo del criterio)', 10], ['Educación informal', '120–159 horas', 10], ['Educación informal', '96–119 horas', 8], ['Educación informal', '72–95 horas', 6], ['Educación informal', '48–71 horas', 4], ['Educación informal', '24–47 horas', 2], ['Vínculo territorial', 'Nacimiento: municipio 15 / departamento 9', 15], ['Vínculo territorial', 'Educación media/normalista: municipio 12 / departamento 7', 12], ['Vínculo territorial', 'Residencia: municipio 9 / departamento 5', 9]];
+        function renderScore() { let type = document.getElementById('scoreTable').value, rows = type === 'general' ? generalRows : specificRows, c = document.getElementById('scoreContent'); let intro = type === 'general' ? 'La tabla general totaliza 100 puntos: educación formal mínima (10), Saber Pro/TyT (10), experiencia en niveles señalados (35), experiencia en cualquier nivel (10), vínculo territorial (15) y educación formal adicional (20).' : 'La tabla específica totaliza 100 puntos. El anexo la describe para vacantes dirigidas a jóvenes de 18 a 28 años sin experiencia; confirma siempre la tabla indicada en la vacante y las condiciones particulares.'; let body = rows.map(r => '<tr><td>' + r[0] + '</td><td>' + r[1] + '</td><td class="points">' + r[2] + '</td></tr>').join(''); c.innerHTML = '<div class="notice">' + intro + '</div><div class="tablewrap"><table><thead><tr><th>Criterio</th><th>Subcriterio resumido</th><th>Puntos</th></tr></thead><tbody>' + body + '</tbody></table></div>' + (type === 'general' ? '<p class="small">En experiencia docente en niveles de educación inicial, preescolar, básica, secundaria y media, los puntos por subcriterio se suman hasta cinco años y hasta 35 puntos. En educación formal adicional, se distingue si acredita o no vínculo territorial.</p>' : '<p class="small">En educación informal, el máximo del criterio es 10 puntos, según los rangos de horas de la tabla. El anexo indica que se otorga un solo subcriterio por criterio, el que más beneficie al aspirante.</p><div class="notice">El anexo establece prioridad especial para jóvenes de 18 a 28 años que estuvieron bajo custodia y protección del Sistema Nacional de Bienestar Familiar, si cumplen las condiciones allí señaladas. Verifica la norma completa y la vacante concreta.</div>') }
+        document.getElementById('pdfFiles').addEventListener('change', e => { const results = document.getElementById('fileResults'); results.innerHTML = '';[...e.target.files].forEach(f => { const isPdf = f.name.toLowerCase().endsWith('.pdf') || f.type === 'application/pdf', sizeOk = f.size <= 1024 * 1024; const card = document.createElement('div'); card.className = 'fileitem'; const top = document.createElement('div'); top.className = 'filetop'; const title = document.createElement('b'); title.textContent = f.name; const badges = document.createElement('div'); const s1 = document.createElement('span'); s1.className = 'status ' + (isPdf ? 'ok' : 'bad'); s1.textContent = isPdf ? 'PDF detectado' : 'No parece PDF'; const s2 = document.createElement('span'); s2.className = 'status ' + (sizeOk ? 'ok' : 'bad'); s2.textContent = sizeOk ? (f.size / 1024).toFixed(0) + ' KB' : 'Supera 1 MB'; badges.append(s1, document.createTextNode(' '), s2); top.append(title, badges); const p = document.createElement('p'); p.className = 'small'; p.textContent = (isPdf && sizeOk ? 'Revisión técnica básica superada. ' : 'Requiere atención. ') + (isPdf ? 'Aún debes abrirlo y comprobar que sea legible, completo y correcto.' : 'Convierte o guarda el documento como PDF antes de cargarlo.'); card.append(top, p); results.append(card) }) });
+        const answers = { q1: 'b', q2: 'b', q3: 'b', q4: 'b', q5: 'b', q6: 'a' }, explanations = { q1: 'El anexo exige que cada documento cargado sea PDF, legible y no exceda 1 MB.', q2: 'Solo se tienen en cuenta los documentos cargados hasta el momento de la postulación; después no puedes actualizar los soportes de esa postulación.', q3: 'La certificación debe identificar la entidad y el empleo, indicar fechas exactas y cumplir los requisitos de firma y contenido aplicables.', q4: 'El anexo indica que, en esos estados, no puedes postularte a otra vacante hasta que finalice el proceso.', q5: 'Debes verificar que el título esté habilitado para el área y nivel conforme al manual.', q6: 'La constancia debe incluir entidad expedidora, nombre del evento, fechas de realización e intensidad horaria.' };
+        document.getElementById('quizForm').addEventListener('submit', e => { e.preventDefault(); let score = 0; Object.keys(answers).forEach(q => { const chosen = document.querySelector('input[name="' + q + '"]:checked'), ok = !!chosen && chosen.value === answers[q]; if (ok) score++; const fb = document.querySelector('[data-feedback="' + q + '"]'); fb.className = 'feedback show ' + (ok ? 'correct' : 'incorrect'); fb.textContent = (ok ? 'Correcto. ' : 'Revisa esta regla. ') + explanations[q] }); document.getElementById('quizResult').classList.remove('hidden'); document.getElementById('quizScore').textContent = score + ' / 6'; document.getElementById('quizMessage').textContent = score === 6 ? 'Excelente: reconoces las reglas documentales principales. Revisa de todas formas los requisitos de la vacante y los manuales oficiales.' : score >= 4 ? 'Buen avance. Repasa las explicaciones marcadas y vuelve a intentarlo.' : 'Repasa la ruta y las listas de verificación; los errores documentales pueden afectar la validación de tus soportes.'; document.getElementById('quizResult').scrollIntoView({ behavior: 'smooth', block: 'center' }) }); function resetQuiz() { document.getElementById('quizForm').reset(); document.querySelectorAll('.feedback').forEach(f => { f.className = 'feedback'; f.textContent = '' }); document.getElementById('quizResult').classList.add('hidden') }
+        loadChecks(); renderScore();
+    </script>
+</body>
+
+</html>

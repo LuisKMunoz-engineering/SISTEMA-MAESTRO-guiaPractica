@@ -32,3 +32,4 @@ Para activarlo en GitHub Pages:
 
 ## ⚖️ Alcance
 Herramienta de carácter orientador y educativo. No reemplaza los canales ni sistemas oficiales del Ministerio de Educación Nacional de Colombia.
+
